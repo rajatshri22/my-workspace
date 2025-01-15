@@ -4,7 +4,7 @@ Resources:
   UdaBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: website-artifacts
+      BucketName: uda-iye-bucket
       AccessControl: PublicRead
       WebsiteConfiguration:
         IndexDocument: index.html
