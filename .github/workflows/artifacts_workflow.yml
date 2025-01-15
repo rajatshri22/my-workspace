@@ -48,4 +48,3 @@ jobs: # Jobs defined in the workflow
           --query 'Stacks[0].Output[?OutputKey==`ArtifactBucketWebsiteURL`].OutputValue' \
           --output text
 
-          
