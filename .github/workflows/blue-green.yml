@@ -8,6 +8,7 @@ env:
   AWS_REGION: us-east-1     # Update this to your AWS Region
   TF_ACTION_WORKING_DIR: 'terraform' # Update this to your Terraform files directory
 
+
 jobs:
   terraform:
     name: 'Terraform'
@@ -22,11 +23,11 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v3
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }} # Use your stored AWS Access Key ID
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }} # Use your stored AWS Secret Access Key
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-session-token: ${{secrets.AWS_SESSION_TOKEN}}
-          aws-region: ${{ env.AWS_REGION }} # Use the region from your environment variables
-        
+          aws-region: us-east-1
       # Set up the specified version of Terraform
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
